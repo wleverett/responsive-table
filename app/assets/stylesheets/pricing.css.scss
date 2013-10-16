@@ -2,23 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+img { 
+	max-width: 100%; 
+}
+
 .container {
   max-width:  960px;
 
-  @media all and (min-width: 420px) and (max-width: 780px) {}
-
   .plan {
-    height: 500px;
-    float: left;
-    width: 300px / 960px * 100%;
-  }
-
-  .plan.premium {
+    float: none;
+    width: auto;
     margin: 0 (30px / 960px * 100%);
   }
-}
 
-img {
-	max-width: 100%;
-}
+  @media all and (min-width: 420px) {
 
+    .plan {
+      float: left;
+      width: 300px / 960px * 100%;
+      margin: 0;
+    }
+
+    .plan.premium {
+      margin: 0 (30px / 960px * 100%);
+    }
+  }
+
+	@media all and (max-width: 420px) {
+    img {
+    	display: none;
+    }
+
+    .plan {
+      float: none;
+    }
+
+    .plan.premium {
+      margin: 0 (30px / 960px * 100%);
+    }
+  }
+}
